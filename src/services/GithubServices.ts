@@ -30,6 +30,7 @@ export const fetchUserDetails = async (userId: string): Promise<IUser> => {
       followers: user.followers,
       following: user.following,
       public_repos: user.public_repos,
+      repos_url: user.repos_url,
     };
   } catch (error) {
     throw new Error(`Failed to fetch details for user ${userId}`);

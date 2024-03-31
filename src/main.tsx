@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import CssbaseLine from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import App from "./App.tsx";
-import "./index.css";
 
 import theme from "./utils/theme.ts";
 

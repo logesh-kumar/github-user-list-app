@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
         <Button
           variant="contained"
           size="large"
-          onClick={() => navigate("/users")}
+          onClick={() => navigate("/users/list-view")}
         >
           Explore Users
         </Button>

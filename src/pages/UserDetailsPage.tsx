@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchUserDetails } from "../services/GithubServices";
 import { IUser } from "../models/UserModel";
+import { styled } from "@mui/material/styles";
 import {
   CircularProgress,
   Card,
@@ -10,6 +11,10 @@ import {
   CardContent,
   Typography,
 } from "@mui/material";
+
+const UserDetailsPageStyled = styled("div")`
+  margin-top: 3rem;
+`;
 
 const UserDetailsPage: React.FC = () => {
   const { userId } = useParams<{ userId: string }>();
@@ -44,37 +49,39 @@ const UserDetailsPage: React.FC = () => {
   }
 
   return (
-    <Card>
-      <CardMedia
-        component="img"
-        height="140"
-        image={user.avatar_url}
-        alt={user.login}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {user.login}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Name: {user.name || "N/A"}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Location: {user.location || "N/A"}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Company: {user.company || "N/A"}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Followers: {user.followers}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Following: {user.following}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Public Repositories: {user.public_repos}
-        </Typography>
-      </CardContent>
-    </Card>
+    <UserDetailsPageStyled>
+      <Card>
+        <CardMedia
+          component="img"
+          height="140"
+          image={user.avatar_url}
+          alt={user.login}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {user.login}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Name: {user.name || "N/A"}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Location: {user?.location || "N/A"}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Company: {user?.company || "N/A"}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Followers: {user.followers}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Following: {user.following}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Public Repositories: {user.public_repos}
+          </Typography>
+        </CardContent>
+      </Card>
+    </UserDetailsPageStyled>
   );
 };
 

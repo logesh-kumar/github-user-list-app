@@ -6,7 +6,7 @@ import { CircularProgress, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import UserCard from "../components/UserCard";
 
-const UserListPage: React.FC = () => {
+const UserListPageCardView: React.FC = () => {
   const [users, setUsers] = useState<IUserSummary[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -43,4 +43,4 @@ const UserListPage: React.FC = () => {
   );
 };
 
-export default UserListPage;
+export default UserListPageCardView;

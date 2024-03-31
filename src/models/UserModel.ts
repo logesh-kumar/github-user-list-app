@@ -2,12 +2,13 @@ export interface IUser {
   id: string;
   login: string;
   avatar_url: string;
+  repos_url: string;
   name: string;
-  location?: string;
-  company?: string;
   followers: number;
   following: number;
   public_repos: number;
+  location?: string;
+  company?: string;
 }
 
 export interface IUserSummary {
