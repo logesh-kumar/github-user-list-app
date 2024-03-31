@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IUser, IUserSummary } from "../models/UserModel";
+import { IRepository, IUser, IUserSummary } from "../models/UserModel";
 import { BASE_URL } from "../utils/constants";
 
 export const fetchUsers = async (): Promise<IUserSummary[]> => {
@@ -34,5 +34,25 @@ export const fetchUserDetails = async (userId: string): Promise<IUser> => {
     };
   } catch (error) {
     throw new Error(`Failed to fetch details for user ${userId}`);
+  }
+};
+
+export const fetchUserRepos = async (
+  userId: string
+): Promise<IRepository[]> => {
+  try {
+    const response = await axios.get(`${BASE_URL}/users/${userId}/repos`);
+    return response.data.map((repo: any) => ({
+      id: repo.id,
+      name: repo.name,
+      description: repo.description,
+      stargazers_count: repo.stargazers_count,
+      watchers_count: repo.watchers_count,
+      forks_count: repo.forks_count,
+      language: repo.language,
+      html_url: repo.html_url,
+    }));
+  } catch (error) {
+    throw new Error(`Failed to fetch repositories for user ${userId}`);
   }
 };

@@ -17,6 +17,17 @@ export interface IUserSummary {
   avatar_url: string;
 }
 
+export interface IRepository {
+  id: string;
+  name: string;
+  description: string;
+  stargazers_count: number;
+  watchers_count: number;
+  forks_count: number;
+  language: string;
+  html_url: string;
+}
+
 export interface UserCardProps {
   user: IUserSummary;
 }
