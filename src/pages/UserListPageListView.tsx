@@ -34,16 +34,6 @@ const columns: GridColDef[] = [
       />
     ),
   },
-  // {
-  //   field: "repos_url",
-  //   headerName: "Public Repos",
-  //   width: 130,
-  //   renderCell: (params) => (
-  //     <a target="_blank" href={params.value} style={{ textDecoration: "none" }}>
-  //       {params.value}
-  //     </a>
-  //   ),
-  // },
 ];
 
 const UserListPageListView = () => {

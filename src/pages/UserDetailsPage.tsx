@@ -1,9 +1,9 @@
-// pages/UserDetailsPage.tsx
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchUserDetails } from "../services/GithubServices";
 import { IUser } from "../models/UserModel";
 import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
 import {
   CircularProgress,
   Card,
@@ -12,11 +12,11 @@ import {
   Typography,
 } from "@mui/material";
 
-const UserDetailsPageStyled = styled("div")`
+const UserDetailsPageStyled = styled(Box)`
   margin-top: 3rem;
 `;
 
-const UserDetailsPage: React.FC = () => {
+const UserDetailsPage = () => {
   const { userId } = useParams<{ userId: string }>();
   const [user, setUser] = useState<IUser | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
