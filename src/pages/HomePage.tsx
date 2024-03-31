@@ -1,8 +1,8 @@
 import React from "react";
-import UserListPageListView from "./UserListPageListView";
+import UserListView from "./UserListView";
 
 const HomePage: React.FC = () => {
-  return <UserListPageListView />;
+  return <UserListView />;
 };
 
 export default HomePage;

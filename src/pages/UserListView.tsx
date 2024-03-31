@@ -36,7 +36,7 @@ const columns: GridColDef[] = [
   },
 ];
 
-const UserListPageListView = () => {
+const UserListView = () => {
   const [users, setUsers] = useState<GridRowModel[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -65,4 +65,4 @@ const UserListPageListView = () => {
   );
 };
 
-export default UserListPageListView;
+export default UserListView;

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
 import { IRepository, IUser, IUserSummary } from "../models/UserModel";
 import { BASE_URL } from "../utils/constants";
